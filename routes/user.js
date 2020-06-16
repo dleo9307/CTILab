@@ -17,7 +17,7 @@ module.exports = function(router){
 
     router.route('/process').post(function(req,res){
         for(var i=0; i<csv_data.length; i++){
-            var cmd ='rscript C:/Users/이대현/Desktop/CTILab/public/process.R '+csv_data[i].number+" "+csv_data[i].speed+" "+csv_data[i].dist;
+            var cmd ='/public/process.R '+csv_data[i].number+" "+csv_data[i].speed+" "+csv_data[i].dist;
            
             exec(cmd, (error, stdout, stderr) => {
                 if(error) {
